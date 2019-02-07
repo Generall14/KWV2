@@ -1,0 +1,14 @@
+Istnieje pewna świetna przeglądatka obrazów zwana IrfanView. Jest lekka, szybka i zawiera kilka prostych acz przydatnych funkcjonalności. Ma przy tym poważną wadę: działa tylko na jedynym słusznym systemie operacyjnym. Celem tego projektu jeststworzenei dla niego alternatywy (kiedyś coś takiego już zrobiłem jako KWV, jednak jedynym słusznym rozwinięciem tego problemu jest wyrzucenie go do śmieci).
+Przyjęte cele:
+ - od strony architektury kodu - otwartość na kolejne modyfikacje i rozszerzenia (to chyba oczywiste?)
+ - UI oraz sposób działania zbliżony do IrfanView,
+ - kilka podstawowych operacji na obrazach:
+  * modyfikacje pliku
+  * zmiana rozmiarów, obracanie itp.,
+  * przycinanie,
+ - mechanizm preładowania obrazów z możliwością przerwania (bez tego przeglądanie obrazów długo się łądujących jest upierdliwe),
+ - obsługa animacji gif.
+Nie przewiduje się obsługi innych rodzajów plików multimedialnych (audio, wideo).
+
+
+Aktualny status: nic tu nie ma, to tylko plany.
