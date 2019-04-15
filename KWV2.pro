@@ -9,8 +9,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     src/MainWindow.cpp \
-    src/GraphicsView.cpp
+    src/GraphicsView.cpp \
+    src/ImgEngine/ImgEngine.cpp
 
 HEADERS  += \ 
     src/MainWindow.hpp \
-    src/GraphicsView.hpp
+    src/GraphicsView.hpp \
+    src/ImgEngine/ImgData.hpp \
+    src/ImgEngine/ImgEngine.hpp

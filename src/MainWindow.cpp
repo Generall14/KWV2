@@ -7,11 +7,16 @@
 #include <QLayout>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include "ImgEngine/ImgData.hpp"
+#include <QVector>
 
 MainWindow::MainWindow():
     QMainWindow()
 {
     GraphicsView* graphicsView = new GraphicsView();
+    imgEngine = std::make_unique<ImgEngine>(new ImgEngine);
+
+    connect(imgEngine.get(), &ImgEngine::draw, graphicsView, &GraphicsView::printPixmap);
 
     QWidget* wd = new QWidget();
     this->setCentralWidget(wd);
@@ -20,16 +25,16 @@ MainWindow::MainWindow():
     this->centralWidget()->setLayout(mLay);
     mLay->addWidget(graphicsView);
 
-    graphicsView->printPixmap(std::shared_ptr<QPixmap>(new QPixmap("tst/imgj.jpg")));
 
 
-//    QGraphicsScene* sc = new QGraphicsScene();
-//    QGraphicsView* vw = new QGraphicsView();
-//    vw->setScene(sc);
-//    mLay->addWidget(vw);
+    //=======================================================
+
+//    graphicsView->printPixmap(std::shared_ptr<QPixmap>(new QPixmap("tst/imgj.jpg")));
+    imgEngine->loadImage("tst/imga.jpg");
 
 
-//    sc->addPixmap(QPixmap("tst/imgj.jpg").scaledToHeight(100));
-//    sc->clear();
-//    sc->addPixmap(QPixmap("tst/imga.jpg").scaledToHeight(100));
+//    QVector<QPixmap> vec;
+//    vec.append(QPixmap("tst/imga.jpg"));
+//    vec.append(QPixmap("tst/imgb.jpeg"));
+//    ImgData idd{std::move(vec)};
 }
