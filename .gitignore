@@ -1,0 +1,6 @@
+*~
+*.ico
+*.user.*
+*.user
+doc_doxygen/
+stats/*
