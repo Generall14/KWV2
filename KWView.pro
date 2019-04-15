@@ -7,6 +7,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = KWV2
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp
 
-HEADERS  += 
+HEADERS  += \ 
+    mainwindow.h
