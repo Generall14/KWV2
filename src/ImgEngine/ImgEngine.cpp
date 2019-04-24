@@ -11,6 +11,8 @@ ImgEngine::ImgEngine(QObject* parent):
     connect(loadManager.get(), &LoadManager::loaded, dataQueue.get(), &DataQueue::openedFile);
 
     connect(dataQueue.get(), &DataQueue::pixmapChanged, displayer.get(), &Displayer::pixmapChanged);
+    connect(dataQueue.get(), &DataQueue::fileChanged, zoomer.get(), &Zoomer::resetZoom);
+    connect(dataQueue.get(), &DataQueue::fileChanged, this, &ImgEngine::changed);
 
     connect(displayer.get(), &Displayer::proceedPixmap, zoomer.get(), &Zoomer::proceedPixmap);
 
@@ -23,4 +25,21 @@ void ImgEngine::loadImage(QString adress)
 {
     loadManager->load(adress);
 //    emit draw(std::shared_ptr<QPixmap>(new QPixmap(adress))); // <TODO> to tylko testy
+}
+
+QFileInfo ImgEngine::getFileInfo() const
+{
+    //<TODO>
+    return QFileInfo();
+}
+
+double ImgEngine::getZoom() const
+{
+    //<TODO>
+    return 1.0;
+}
+
+void ImgEngine::setZoom() const
+{
+    //<TODO>
 }

@@ -12,6 +12,7 @@ public:
 
 public slots:
     void proceedPixmap(std::shared_ptr<QPixmap> pixmap);
+    void resetZoom();
 
 signals:
     void draw(std::shared_ptr<QPixmap> pixmap);

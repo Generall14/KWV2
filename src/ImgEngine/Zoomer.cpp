@@ -11,3 +11,8 @@ void Zoomer::proceedPixmap(std::shared_ptr<QPixmap> pixmap)
     //<TODO> to tylko dzida
     emit draw(pixmap);
 }
+
+void Zoomer::resetZoom()
+{
+    //<TODO>
+}

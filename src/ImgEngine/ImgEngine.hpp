@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QSharedPointer>
 #include <memory>
+#include <QFileInfo>
 #include "ImgData.hpp"
 #include "LoadManager.hpp"
 #include "DataQueue.hpp"
@@ -16,12 +17,17 @@ class ImgEngine : public QObject
 public:
     ImgEngine(QObject* parent = nullptr);
 
+    QFileInfo getFileInfo() const;
+    double getZoom() const;
+    void setZoom() const;
+
 public slots:
     void loadImage(QString adress);
 
 signals:
-    void draw(std::shared_ptr<QPixmap> pixmap);
-    void changed();
+    void draw(std::shared_ptr<QPixmap> pixmap); /**<Sygnał do przerysowania obrazu.*/
+    void changed(); /**<Zmiana wyświetlanego pliku.*/
+    void statusChanged(QString status); /**<Zmiana statusu.*/
 
 private:
     std::unique_ptr<LoadManager> loadManager;
