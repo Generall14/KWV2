@@ -14,7 +14,9 @@ SOURCES += main.cpp \
     src/ImgEngine/LoadManager.cpp \
     src/ImgEngine/DataQueue.cpp \
     src/ImgEngine/Zoomer.cpp \
-    src/ImgEngine/Displayer.cpp
+    src/ImgEngine/Displayer.cpp \
+    src/Plugins/Plugin.cpp \
+    src/Plugins/PluginManager.cpp
 
 HEADERS  += \ 
     src/MainWindow.hpp \
@@ -24,4 +26,6 @@ HEADERS  += \
     src/ImgEngine/LoadManager.hpp \
     src/ImgEngine/DataQueue.hpp \
     src/ImgEngine/Zoomer.hpp \
-    src/ImgEngine/Displayer.hpp
+    src/ImgEngine/Displayer.hpp \
+    src/Plugins/Plugin.hpp \
+    src/Plugins/PluginManager.hpp
