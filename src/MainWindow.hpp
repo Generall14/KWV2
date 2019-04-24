@@ -17,7 +17,7 @@ public:
 
 private:
     GraphicsView* graphicsView = nullptr;
-    std::unique_ptr<ImgEngine> imgEngine;
+    std::shared_ptr<ImgEngine> imgEngine;
 };
 
 #endif
