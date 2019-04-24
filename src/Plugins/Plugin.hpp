@@ -7,13 +7,13 @@ class Plugin : public QObject
 {
     Q_OBJECT
 public:
+
 signals:
     void msig();
 public slots:
     void xyz(){}
 
-//protected:
-public:
+protected:
     Plugin();
 };
 

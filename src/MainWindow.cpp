@@ -33,7 +33,7 @@ MainWindow::MainWindow():
 //    graphicsView->printPixmap(std::shared_ptr<QPixmap>(new QPixmap("tst/imgj.jpg")));
     imgEngine->loadImage("tst/imga.jpg");
 
-    Plugin();
+//    Plugin();
 //    QVector<QPixmap> vec;
 //    vec.append(QPixmap("tst/imga.jpg"));
 //    vec.append(QPixmap("tst/imgb.jpeg"));
