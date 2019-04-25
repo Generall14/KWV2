@@ -17,9 +17,16 @@ public:
 
 public slots:
     void printPixmap(std::shared_ptr<QPixmap> pixmap);
+    virtual void keyPressEvent(QKeyEvent *event);
 
 private:
     std::unique_ptr<QGraphicsScene> scene;
+
+signals:
+    void zoomInRequest();
+    void zoomOutRequest();
+    void nextFileRequest();
+    void prevFileRequest();
 };
 
 #endif

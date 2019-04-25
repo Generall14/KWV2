@@ -5,6 +5,8 @@
 #include <QKeySequence>
 #include <QVector>
 
+class GraphicsView;
+
 class Plugin : public QObject
 {
     Q_OBJECT
@@ -19,7 +21,9 @@ public:
     };
 
     Plugin(QObject* parent = nullptr);
+
     const QVector<description>& getDescriptions() const;
+    virtual void connectToView(const GraphicsView*){}
 
 public slots:
     virtual void action(int switcher=0) = 0;

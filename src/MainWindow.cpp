@@ -19,7 +19,7 @@ MainWindow::MainWindow():
 {
     GraphicsView* graphicsView = new GraphicsView();
     imgEngine = std::make_shared<ImgEngine>(new ImgEngine);
-    pluginManager = std::make_shared<PluginManager>(new PluginManager(this));
+    pluginManager = std::make_shared<PluginManager>(new PluginManager(graphicsView));
 
     connect(imgEngine.get(), &ImgEngine::draw, graphicsView, &GraphicsView::printPixmap);
 

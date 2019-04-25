@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QMetaMethod>
+#include "src/GraphicsView.hpp"
 
 #include "Buildin/FileManager.hpp"
 
@@ -13,12 +14,14 @@ PluginManager::PluginManager(QObject *parent):
 
 }
 
-PluginManager::PluginManager(QWidget *widget, QObject *parent):
+PluginManager::PluginManager(GraphicsView *view, QObject *parent):
     QObject(parent),
-    _widget(widget)
+    _widget(view)
 {
     loadBuidIns();
-    loadShortcuts();
+
+    applyShortcuts();
+    connectView();
 }
 
 void PluginManager::loadBuidIns()
@@ -26,7 +29,7 @@ void PluginManager::loadBuidIns()
     _plugins.append(std::make_shared<FileManager>(new FileManager()));
 }
 
-void PluginManager::loadShortcuts()
+void PluginManager::applyShortcuts()
 {
     for(auto it: _plugins)
     {
@@ -42,3 +45,8 @@ void PluginManager::loadShortcuts()
     }
 }
 
+void PluginManager::connectView()
+{
+    for(auto it: _plugins)
+        it.get()->connectToView(_widget);
+}

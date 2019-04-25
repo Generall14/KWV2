@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <memory>
 
-
 class PluginManager;
 class ImgEngine;
 class GraphicsView;

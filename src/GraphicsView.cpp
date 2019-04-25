@@ -1,5 +1,7 @@
 #include "GraphicsView.hpp"
 #include <QDebug>
+#include <QKeyEvent>
+#include <QEvent>
 
 GraphicsView::GraphicsView(QWidget* parent):
     QGraphicsView(parent)
@@ -16,4 +18,15 @@ GraphicsView::~GraphicsView()
 void GraphicsView::printPixmap(std::shared_ptr<QPixmap> pixmap)
 {
     scene->addPixmap(*pixmap.get());
+}
+
+void GraphicsView::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << "keyPressEvent";
+    if(event->key()==Qt::Key_Right)
+    {
+        emit nextFileRequest();
+        return;
+    }
+    QGraphicsView::keyPressEvent(event);
 }

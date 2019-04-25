@@ -6,20 +6,23 @@
 #include <memory>
 #include "Plugin.hpp"
 
+class GraphicsView;
+
 class PluginManager : public QObject
 {
     Q_OBJECT
 public:
     PluginManager(QObject* parent = nullptr);
-    PluginManager(QWidget* widget, QObject* parent = nullptr);
+    PluginManager(GraphicsView* view, QObject* parent = nullptr);
 
 private:
     void loadBuidIns();
 
-    void loadShortcuts();
+    void applyShortcuts();
+    void connectView();
 
     QVector<std::shared_ptr<Plugin> > _plugins;
-    QWidget* _widget = nullptr;
+    GraphicsView* _widget = nullptr;
 };
 
 #endif
