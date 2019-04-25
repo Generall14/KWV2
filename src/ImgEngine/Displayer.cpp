@@ -1,4 +1,5 @@
 #include "Displayer.hpp"
+#include "ImgData.hpp"
 
 
 Displayer::Displayer(QObject* parent):

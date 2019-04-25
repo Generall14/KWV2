@@ -2,8 +2,9 @@
 #define LOADMANAGER_HPP
 
 #include <QObject>
-#include "ImgData.hpp"
 #include <memory>
+
+class ImgData;
 
 /**
  * Klasa do ładowania obrazów (TODO docelowo ma wykorzystywać osobne wątki i umożliwiać przerywanie

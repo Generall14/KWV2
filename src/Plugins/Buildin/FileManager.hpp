@@ -6,7 +6,11 @@
 
 class FileManager : public Plugin
 {
+public:
+    FileManager();
 
+public slots:
+    void open();
 };
 
 #endif

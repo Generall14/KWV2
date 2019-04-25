@@ -1,4 +1,8 @@
 #include "ImgEngine.hpp"
+#include "LoadManager.hpp"
+#include "DataQueue.hpp"
+#include "Displayer.hpp"
+#include "Zoomer.hpp"
 
 ImgEngine::ImgEngine(QObject* parent):
     QObject(parent)

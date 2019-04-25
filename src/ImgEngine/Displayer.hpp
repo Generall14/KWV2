@@ -3,7 +3,8 @@
 
 #include <QObject>
 #include <memory>
-#include "ImgData.hpp"
+
+class ImgData;
 
 /**
  * Klasa wysyła poszczególne klatki obrazu.

@@ -5,11 +5,11 @@
 #include <QSharedPointer>
 #include <memory>
 #include <QFileInfo>
-#include "ImgData.hpp"
-#include "LoadManager.hpp"
-#include "DataQueue.hpp"
-#include "Displayer.hpp"
-#include "Zoomer.hpp"
+
+class LoadManager;
+class DataQueue;
+class Displayer;
+class Zoomer;
 
 class ImgEngine : public QObject
 {

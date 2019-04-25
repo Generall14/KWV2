@@ -10,12 +10,18 @@
 #include "ImgEngine/ImgData.hpp"
 #include <QVector>
 #include "Plugins/Plugin.hpp"
+#include "src/Plugins/PluginManager.hpp"
+#include "src/ImgEngine/ImgEngine.hpp"
+#include "src/GraphicsView.hpp"
 
 MainWindow::MainWindow():
     QMainWindow()
 {
     GraphicsView* graphicsView = new GraphicsView();
     imgEngine = std::make_shared<ImgEngine>(new ImgEngine);
+
+    std::make_unique<PluginManager>(new PluginManager());
+//    pluginManager = std::make_shared<PluginManager>(new PluginManager());
 
     connect(imgEngine.get(), &ImgEngine::draw, graphicsView, &GraphicsView::printPixmap);
 

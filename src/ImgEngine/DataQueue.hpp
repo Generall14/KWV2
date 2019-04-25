@@ -3,8 +3,9 @@
 
 #include <QObject>
 #include <memory>
-#include "ImgData.hpp"
 #include <QVector>
+
+class ImgData;
 
 /**
  * Zapewnia przechowywanie plików w kolejce (do zachowania przy edycji i umożliwieniu cofnięcia zmian).

@@ -1,4 +1,5 @@
 #include "LoadManager.hpp"
+#include "ImgData.hpp"
 
 LoadManager::LoadManager(QObject* parent):
     QObject(parent)

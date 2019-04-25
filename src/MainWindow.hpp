@@ -3,8 +3,11 @@
 
 #include <QMainWindow>
 #include <memory>
-#include "src/GraphicsView.hpp"
-#include "src/ImgEngine/ImgEngine.hpp"
+
+
+class PluginManager;
+class ImgEngine;
+class GraphicsView;
 
 /**
  * Klasa wejściowa aplikacji, przedstawia GUI, ładuje elementy pod GUI.
@@ -18,6 +21,7 @@ public:
 private:
     GraphicsView* graphicsView = nullptr;
     std::shared_ptr<ImgEngine> imgEngine;
+    std::shared_ptr<PluginManager> pluginManager;
 };
 
 #endif

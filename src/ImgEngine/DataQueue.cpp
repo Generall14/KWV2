@@ -1,4 +1,5 @@
 #include "DataQueue.hpp"
+#include "ImgData.hpp"
 
 DataQueue::DataQueue(QObject* parent):
     QObject(parent)
