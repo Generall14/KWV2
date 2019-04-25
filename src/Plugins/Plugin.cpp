@@ -1,8 +1,8 @@
 #include "Plugin.hpp"
 #include <QMetaMethod>
 
-Plugin::Plugin():
-    QObject(nullptr)
+Plugin::Plugin(QObject *parent):
+    QObject(parent)
 {
     connect(this, this->metaObject()->method(this->metaObject()->indexOfSignal("msig()")),
             this, this->metaObject()->method(this->metaObject()->indexOfSlot("xyz()")));

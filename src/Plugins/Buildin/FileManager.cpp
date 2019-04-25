@@ -1,10 +1,10 @@
 #include "FileManager.hpp"
 #include <QDebug>
 
-FileManager::FileManager():
-    Plugin()
+FileManager::FileManager(QObject *parent):
+    Plugin(parent)
 {
-    _desc.append(description{"open()", QKeySequence(Qt::Key_C+Qt::CTRL), "", "", ""});
+    _desc.append(description{"open()", "Ctrl+O", "", "", ""});
 }
 
 void FileManager::open()

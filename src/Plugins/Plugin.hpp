@@ -12,7 +12,7 @@ public:
     struct description
     {
         const char* function;
-        QKeySequence shortcut;
+        const char* shortcut;
         const char* menuItem;
         const char* menuGroup;
         const char* menuSubGroup;
@@ -25,7 +25,7 @@ public slots:
     void xyz(){}
 
 protected:
-    Plugin();
+    Plugin(QObject* parent = nullptr);
     QVector<description> _desc;
 };
 

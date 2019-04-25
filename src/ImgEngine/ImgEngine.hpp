@@ -6,10 +6,10 @@
 #include <memory>
 #include <QFileInfo>
 
-class LoadManager;
-class DataQueue;
-class Displayer;
-class Zoomer;
+#include "LoadManager.hpp"
+#include "DataQueue.hpp"
+#include "Displayer.hpp"
+#include "Zoomer.hpp"
 
 class ImgEngine : public QObject
 {

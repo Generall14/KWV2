@@ -7,7 +7,7 @@
 class FileManager : public Plugin
 {
 public:
-    FileManager();
+    FileManager(QObject* parent = nullptr);
 
 public slots:
     void open();
