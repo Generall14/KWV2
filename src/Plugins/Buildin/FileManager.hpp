@@ -9,7 +9,7 @@ class FileManager : public Plugin
 public:
     FileManager(QObject* parent = nullptr);
 
-    virtual void connectToView(const GraphicsView*gv);
+    virtual void connectToView(const GUIEngine* gv);
 
 public slots:
     virtual void action(int switcher=0);

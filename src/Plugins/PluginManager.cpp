@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QMetaMethod>
-#include "src/GUIEngine/GraphicsView.hpp"
+#include "src/GUIEngine/GUIEngine.hpp"
 
 #include "Buildin/FileManager.hpp"
 
@@ -14,7 +14,7 @@ PluginManager::PluginManager(QObject *parent):
 
 }
 
-PluginManager::PluginManager(GraphicsView *view, QObject *parent):
+PluginManager::PluginManager(GUIEngine *view, QObject *parent):
     QObject(parent),
     _widget(view)
 {

@@ -5,7 +5,7 @@
 #include <QKeySequence>
 #include <QVector>
 
-class GraphicsView;
+class GUIEngine;
 
 class Plugin : public QObject
 {
@@ -23,7 +23,7 @@ public:
     Plugin(QObject* parent = nullptr);
 
     const QVector<description>& getDescriptions() const;
-    virtual void connectToView(const GraphicsView*){}
+    virtual void connectToView(const GUIEngine*){}
 
 public slots:
     virtual void action(int switcher=0) = 0;

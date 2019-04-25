@@ -3,9 +3,8 @@
 
 #include <QMainWindow>
 #include <memory>
+#include <QDebug>
 
-class PluginManager;
-class ImgEngine;
 class GraphicsView;
 
 /**
@@ -15,12 +14,21 @@ class GUIEngine : public QMainWindow
 {
     Q_OBJECT
 public:
-    GUIEngine();
+    GUIEngine(QWidget* parent = nullptr);
+
+public slots:
+
+signals:
+    void printPixmap(std::shared_ptr<QPixmap> pixmap);
+
+    void zoomInRequest();
+    void zoomOutRequest();
+    void nextFileRequest();
+    void prevFileRequest();
 
 private:
-    GraphicsView* graphicsView = nullptr;
-    std::shared_ptr<ImgEngine> imgEngine;
-    std::shared_ptr<PluginManager> pluginManager;
+    GraphicsView* graphicsView = nullptr; //<TODO> shared/unique
+
 };
 
 #endif

@@ -6,14 +6,14 @@
 #include <memory>
 #include "Plugin.hpp"
 
-class GraphicsView;
+class GUIEngine;
 
 class PluginManager : public QObject
 {
     Q_OBJECT
 public:
     PluginManager(QObject* parent = nullptr);
-    PluginManager(GraphicsView* view, QObject* parent = nullptr);
+    PluginManager(GUIEngine* view, QObject* parent = nullptr);
 
 private:
     void loadBuidIns();
@@ -22,7 +22,7 @@ private:
     void connectView();
 
     QVector<std::shared_ptr<Plugin> > _plugins;
-    GraphicsView* _widget = nullptr;
+    GUIEngine* _widget = nullptr;
 };
 
 #endif

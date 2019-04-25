@@ -1,5 +1,5 @@
 #include "FileManager.hpp"
-#include "src/GUIEngine/GraphicsView.hpp"
+#include "src/GUIEngine/GUIEngine.hpp"
 #include <QDebug>
 
 FileManager::FileManager(QObject *parent):
@@ -23,9 +23,10 @@ void FileManager::action(int switcher)
     }
 }
 
-void FileManager::connectToView(const GraphicsView* gv)
+void FileManager::connectToView(const GUIEngine *gv)
 {
-    connect(gv, &GraphicsView::nextFileRequest, this, &FileManager::next);
+    qDebug() << "fdsffdsa";
+    connect(gv, &GUIEngine::nextFileRequest, this, &FileManager::next);
 }
 
 void FileManager::next()
