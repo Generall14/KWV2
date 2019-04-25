@@ -11,21 +11,20 @@ class Plugin : public QObject
 public:
     struct description
     {
-        const char* function;
+        int switcher; /**<Z taką wartością zostanie wywołana funkcja action.*/
         const char* shortcut;
         const char* menuItem;
         const char* menuGroup;
         const char* menuSubGroup;
     };
+
+    Plugin(QObject* parent = nullptr);
     const QVector<description>& getDescriptions() const;
 
-signals:
-    void msig();
 public slots:
-    void xyz(){}
+    virtual void action(int switcher=0) = 0;
 
 protected:
-    Plugin(QObject* parent = nullptr);
     QVector<description> _desc;
 };
 

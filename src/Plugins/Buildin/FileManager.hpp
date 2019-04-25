@@ -10,7 +10,7 @@ public:
     FileManager(QObject* parent = nullptr);
 
 public slots:
-    void open();
+    virtual void action(int switcher=0);
 };
 
 #endif

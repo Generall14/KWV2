@@ -36,15 +36,9 @@ void PluginManager::loadShortcuts()
             if(*(el.shortcut) == 0)
                 continue;
 
-            QShortcut* sh = new QShortcut(QKeySequence(el.shortcut), _widget);
-            connect(sh,
-                    sh->metaObject()->method(sh->metaObject()->indexOfSignal("activated()")),
-                    it.get(),
-                    it.get()->metaObject()->method(it.get()->metaObject()->indexOfSlot(el.function)));
-
-//            connect(sh, &QShortcut::activated, [](){qDebug() << "fdsaf";});
+            QShortcut* sh = new QShortcut(QKeySequence(el.shortcut), _widget); //QWidget przejmuje odpowiedzialność za wskaźnik
+            connect(sh, &QShortcut::activated, [=](){it.get()->action(el.switcher);});
         }
     }
 }
-//connect(this, this->metaObject()->method(this->metaObject()->indexOfSignal("msig()")),
-//        this, this->metaObject()->method(this->metaObject()->indexOfSlot("xyz()")));
+
