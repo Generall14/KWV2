@@ -22,7 +22,6 @@ void GraphicsView::printPixmap(std::shared_ptr<QPixmap> pixmap)
 
 void GraphicsView::keyPressEvent(QKeyEvent *event)
 {
-    qDebug() << "keyPressEvent";
     if(event->key()==Qt::Key_Right)
     {
         emit nextFileRequest();

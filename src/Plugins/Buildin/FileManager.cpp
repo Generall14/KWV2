@@ -1,5 +1,5 @@
 #include "FileManager.hpp"
-#include "src/GraphicsView.hpp"
+#include "src/GUIEngine/GraphicsView.hpp"
 #include <QDebug>
 
 FileManager::FileManager(QObject *parent):

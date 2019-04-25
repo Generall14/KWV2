@@ -11,11 +11,11 @@ class GraphicsView;
 /**
  * Klasa wejściowa aplikacji, przedstawia GUI, ładuje elementy pod GUI.
  */
-class MainWindow : public QMainWindow
+class GUIEngine : public QMainWindow
 {
     Q_OBJECT
 public:
-    MainWindow();
+    GUIEngine();
 
 private:
     GraphicsView* graphicsView = nullptr;

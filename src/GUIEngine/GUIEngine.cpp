@@ -1,4 +1,4 @@
-#include "MainWindow.hpp"
+#include "GUIEngine.hpp"
 
 #include <QDebug>
 #include <QLabel>
@@ -7,14 +7,14 @@
 #include <QLayout>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include "ImgEngine/ImgData.hpp"
+#include "src/ImgEngine/ImgData.hpp"
 #include <QVector>
-#include "Plugins/Plugin.hpp"
+#include "src/Plugins/Plugin.hpp"
 #include "src/Plugins/PluginManager.hpp"
 #include "src/ImgEngine/ImgEngine.hpp"
-#include "src/GraphicsView.hpp"
+#include "GraphicsView.hpp"
 
-MainWindow::MainWindow():
+GUIEngine::GUIEngine():
     QMainWindow()
 {
     GraphicsView* graphicsView = new GraphicsView();

@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QMetaMethod>
-#include "src/GraphicsView.hpp"
+#include "src/GUIEngine/GraphicsView.hpp"
 
 #include "Buildin/FileManager.hpp"
 
